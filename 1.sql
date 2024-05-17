@@ -1,0 +1,28 @@
+SET SERVEROUTPUT ON
+
+-- Con parámetro
+CREATE OR REPLACE PROCEDURE MOSTRAR(N NUMBER) IS
+    NUM NUMBER := N;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Número introducido: ' || NUM);
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error general');
+END;
+/
+
+CALL MOSTRAR(5);
+
+
+-- Sin parámetro
+CREATE OR REPLACE PROCEDURE MOSTRAR IS
+    NUM NUMBER := 0;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Número introducido: ' || NUM);
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error general');
+END;
+/
+
+CALL MOSTRAR();
